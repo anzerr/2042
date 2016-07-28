@@ -23,11 +23,11 @@ public class Logs {
 		return (handle);
 	}
 
-	public void Write(String project, String txt) {
+	public void write(String project, String txt) {
 		try {
 			FileWriter handle = fileMap.get(project);
 			if (handle == null) {
-				handle = new FileWriter("./projects/" + project + "/Prospect/log", true);
+				handle = new FileWriter(project, true);
 				fileMap.put(project, handle);
 			}
 			handle.write(txt);
